@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Hangman Game</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="game-info">
+            <div class="game-name">Hangeman</div>
+            <div class="category">
+                Word From : <span>h</span>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+
+            <div class="hangman-draw">
+                <div class="the-draw">
+                    <div class="the-stand"></div>
+                    <div class="the-hang"></div>
+                    <div class="the-rope"></div>
+                    <div class="the-man">
+                        <div class="the-head"></div>
+                        <div class="the-body"></div>
+                        <div class="the-hands"></div>
+                        <div class="the-legs"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="letters"></div>
+        </div>
+        <hr>
+        <div class="letter-guss">
+
+        </div>
+    </div>
+    
+    <div class="overlay">
+        <div class="popup">
+            <p></p>
+            <div>
+                <button class="yes" onclick="window.location.reload()"></button>
+                <button class="no" onclick="window.close()"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
