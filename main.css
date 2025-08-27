@@ -1,3 +1,4 @@
+/* ================= Global Styles ================= */
 * {
     box-sizing: border-box;
     user-select: none;
@@ -20,9 +21,9 @@ hr {
     border: 1px solid #eee;
 }
 
+/* ================= Game Info ================= */
 .game-info {
     display: flex;
-
 }
 
 .game-info .game-name {
@@ -41,18 +42,24 @@ hr {
     font-weight: bold;
 }
 
+.ctg-hnt-box {
+    display: flex;
+    gap: 30px;
+}
+
+/* ================= Row Layout ================= */
 .row {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* ================= Hangman Draw ================= */
 .hangman-draw {
     flex: 1;
     padding: 20px;
     height: 325px;
     background-color: #f8f8f8;
-
 }
 
 .hangman-draw .the-draw {
@@ -85,6 +92,7 @@ hr {
     display: block;
 }
 
+/* ================= Hangman Parts ================= */
 .hangman-draw .the-stand:before {
     content: "";
     position: absolute;
@@ -152,7 +160,6 @@ hr {
     height: 4px;
     background-color: #222;
     top: 140px;
-
 }
 
 .hangman-draw .the-man .the-hands::before {
@@ -165,7 +172,6 @@ hr {
     transform: rotate(-30deg);
 }
 
-
 .hangman-draw .the-man .the-legs::before,
 .hangman-draw .the-man .the-legs::after {
     content: '';
@@ -174,7 +180,6 @@ hr {
     height: 4px;
     background-color: #222;
     top: 224px;
-
 }
 
 .hangman-draw .the-man .the-legs::before {
@@ -187,8 +192,7 @@ hr {
     transform: rotate(30deg);
 }
 
-
-
+/* ================= Letters ================= */
 .letters {
     flex: 1;
     padding: 15px;
@@ -214,6 +218,7 @@ hr {
     pointer-events: none;
 }
 
+/* ================= Letter Guess ================= */
 .container .letter-guss {
     padding: 20px;
     background-color: #f8f8f8;
@@ -257,7 +262,7 @@ hr {
     background-color: #222;
 }
 
-
+/* ================= Overlay Popup ================= */
 .overlay {
     position: fixed;
     top: 0;
@@ -306,6 +311,200 @@ hr {
 }
 
 .overlay .popup div button.yes {
-
     background-color: blueviolet;
+}
+
+/* ================= Responsive Design ================= */
+/* ====================== Mobile <576px ====================== */
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .game-info {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .game-info .game-name {
+        margin-bottom: 20px;
+    }
+
+    .game-info .category {
+        width: 100%;
+        text-align: center;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .hangman-draw {
+        width: 100%;
+        max-width: 250px;
+        min-height: 220px;
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    .hangman-draw .the-draw {
+        transform: scale(0.7);
+        transform-origin: top center;
+        margin: 0 auto;
+    }
+
+    .letters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .letters .letter-box {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .letter-guss {
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .letter-guss span {
+        width: 28px;
+        height: 35px;
+        font-size: 13px;
+        margin: 2px;
+    }
+
+    .overlay .popup {
+        width: 90%;
+        max-width: 280px;
+        height: auto;
+        padding: 20px;
+    }
+
+    .overlay .popup p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .overlay .popup div button {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}
+
+/* ====================== Tablet 577px - 768px ====================== */
+@media (min-width: 577px) and (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .game-info {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .game-info .game-name {
+        margin-bottom: 20px;
+    }
+
+    .game-info .category {
+        width: 100%;
+        text-align: center;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .hangman-draw {
+        width: 100%;
+        max-width: 300px;
+        min-height: 260px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+    .hangman-draw .the-draw {
+        transform: scale(0.85);
+        transform-origin: top center;
+        margin: 0 auto;
+    }
+
+    .letters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .letters .letter-box {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .letter-guss {
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .letter-guss span {
+        width: 35px;
+        height: 45px;
+        font-size: 15px;
+    }
+
+    .overlay .popup {
+        width: 85%;
+        max-width: 350px;
+    }
+
+    .overlay .popup p {
+        font-size: 18px;
+    }
+}
+
+/* ====================== Medium Screens 769px - 992px ====================== */
+@media (min-width: 769px) and (max-width: 992px) {
+    .container {
+        width: 95%;
+    }
+
+    .letters .letter-box {
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 16px;
+    }
+
+    .container .letter-guss span {
+        width: 38px;
+        height: 50px;
+        font-size: 18px;
+    }
+}
+
+/* ====================== Large Screens >=1200px ====================== */
+@media (min-width: 1200px) {
+    .container {
+        width: 1000px;
+    }
 }
